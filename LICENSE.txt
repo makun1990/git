@@ -1,0 +1,368 @@
+﻿
+MaKun@MK-PC MINGW64 ~
+$ git config --global user.name "MaKun"
+
+MaKun@MK-PC MINGW64 ~
+$ git config --global user.email "mk1990@live.cn"
+
+MaKun@MK-PC MINGW64 ~
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_rege                                                                                                                                                             x]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, com                                                                                                                                                             mand line)
+
+
+MaKun@MK-PC MINGW64 ~
+$ git config -- global
+error: key does not contain a section: global
+
+MaKun@MK-PC MINGW64 ~
+$ git config --global user.email
+mk1990@live.cn
+
+MaKun@MK-PC MINGW64 ~
+$ git config --global user.name
+MaKun
+
+MaKun@MK-PC MINGW64 ~
+$ git init
+Initialized empty Git repository in C:/Users/MaKun/.git/
+
+MaKun@MK-PC MINGW64 ~ (master)
+$ pws
+bash: pws: command not found
+
+MaKun@MK-PC MINGW64 ~ (master)
+$ pwd
+/c/Users/MaKun
+
+MaKun@MK-PC MINGW64 ~ (master)
+$ cd d
+bash: cd: d: No such file or directory
+
+MaKun@MK-PC MINGW64 ~ (master)
+$ cd d:\\
+
+MaKun@MK-PC MINGW64 /d
+$ cd git
+bash: cd: git: No such file or directory
+
+MaKun@MK-PC MINGW64 /d
+$ cd /git
+bash: cd: /git: No such file or directory
+
+MaKun@MK-PC MINGW64 /d
+$ cd Software/git/
+
+MaKun@MK-PC MINGW64 /d/Software/git
+$ pwd
+/d/Software/git
+
+MaKun@MK-PC MINGW64 /d/Software/git
+$ git init
+Initialized empty Git repository in D:/Software/git/.git/
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git add readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git commit -m "first commit. version 1.0.0"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'MaKun@MK-PC.(none)')
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git config --global user.name "MaKun"
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git config --global user.email "mk1990@live.cn"
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git commit -m "first commit. version 1.0.0"
+[master (root-commit) ab365d7] first commit. version 1.0.0
+ 1 file changed, 2 insertions(+)
+ create mode 100644 readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git diff readme.txt
+diff --git a/readme.txt b/readme.txt
+index 3a94755..467aed6 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,2 @@
+-﻿Git is a version control system.
+-Git is free software.
+\ No newline at end of file
++﻿Git is a distributed version control system.
++Git is free software
+\ No newline at end of file
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git add readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git diff readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   readme.txt
+
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git commit -m "add distributed. version 1.0.1"
+[master 049a32a] add distributed. version 1.0.1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git log
+commit 049a32ac3b430cea1e407c34afb654ab1aaa83b6 (HEAD -> master)
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 15:22:06 2018 +0800
+
+    add distributed. version 1.0.1
+
+commit ab365d72bd5f2395f1e1bddb93e056ad0fe0c82b
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 14:40:10 2018 +0800
+
+    first commit. version 1.0.0
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git add readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git commit -m "add GPL. version 1.0.2"
+[master 8d3ae92] add GPL. version 1.0.2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git log
+commit 8d3ae92b90142cdfc437a611a2683e4691345425 (HEAD -> master)
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 15:29:58 2018 +0800
+
+    add GPL. version 1.0.2
+
+commit 049a32ac3b430cea1e407c34afb654ab1aaa83b6
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 15:22:06 2018 +0800
+
+    add distributed. version 1.0.1
+
+commit ab365d72bd5f2395f1e1bddb93e056ad0fe0c82b
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 14:40:10 2018 +0800
+
+    first commit. version 1.0.0
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git reset --hard HEAD^
+HEAD is now at 049a32a add distributed. version 1.0.1
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software.
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$  git log
+commit 049a32ac3b430cea1e407c34afb654ab1aaa83b6 (HEAD -> master)
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 15:22:06 2018 +0800
+
+    add distributed. version 1.0.1
+
+commit ab365d72bd5f2395f1e1bddb93e056ad0fe0c82b
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 14:40:10 2018 +0800
+
+    first commit. version 1.0.0
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git reset --hard 8d3ae92b90142c
+HEAD is now at 8d3ae92 add GPL. version 1.0.2
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   readme.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        LICENSE.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git add readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git add LICENSE.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   LICENSE.txt
+        modified:   readme.txt
+
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git diff readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git commit -m "understand how stage works"
+[master a004fa8] understand how stage works
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 LICENSE.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git log
+commit a004fa8dd0d143aa44b30a56e0f31f3814d529d6 (HEAD -> master)
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 19:13:02 2018 +0800
+
+    understand how stage works
+
+commit 8d3ae92b90142cdfc437a611a2683e4691345425
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 15:29:58 2018 +0800
+
+    add GPL. version 1.0.2
+
+commit 049a32ac3b430cea1e407c34afb654ab1aaa83b6
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 15:22:06 2018 +0800
+
+    add distributed. version 1.0.1
+
+commit ab365d72bd5f2395f1e1bddb93e056ad0fe0c82b
+Author: MaKun <mk1990@live.cn>
+Date:   Thu Feb 1 14:40:10 2018 +0800
+
+    first commit. version 1.0.0
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes.
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git add readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git add readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git commit -m "git tracks changes. version 1.0.4"
+[master 6896925] git tracks changes. version 1.0.4
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+哈哈哈
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ git checkout -- readme.txt
+
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+MaKun@MK-PC MINGW64 /d/Software/git (master)
+$
